@@ -7,6 +7,7 @@ import {
   TextField,
   Input,
   Link,
+  Paper,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
@@ -16,8 +17,16 @@ import DrawerMenu from "./DrawerMenu";
 export default function FlexGrow() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [user, setUser] = useState(localStorage.getItem("username"));
+
   const handMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogout = () => {
+    console.log(localStorage.getItem("username"));
+    setUser(null);
+    localStorage.removeItem("username");
   };
 
   return (
@@ -88,17 +97,48 @@ export default function FlexGrow() {
               />
             </form>
           </Box>
-          <Box>
-            <Button
-              variant="outlined"
+          {user && (
+            <Box
               style={{
-                color: "#ccc",
-                borderColor: "rgb(90 90 90)",
+                alignSelf: "center",
+                border: "1px solid #ccc",
+                borderRadius: 5,
+                marginRight: 20,
+                backgroundColor: "rgb(177, 63, 63)",
               }}
-              href="#"
             >
-              Đăng Nhập
-            </Button>
+              <Typography
+                variant="h6"
+                style={{ color: "#ccc", padding: "2px 5px" }}
+              >
+                {user}
+              </Typography>
+            </Box>
+          )}
+          <Box>
+            {user ? (
+              <Button
+                variant="outlined"
+                style={{
+                  color: "#ccc",
+                  borderColor: "rgb(90 90 90)",
+                }}
+                onClick={() => handleLogout()}
+              >
+                Đăng xuất
+              </Button>
+            ) : (
+              <Button
+                variant="outlined"
+                style={{
+                  color: "#ccc",
+                  borderColor: "rgb(90 90 90)",
+                }}
+                href="/login"
+              >
+                Đăng Nhập
+              </Button>
+            )}
           </Box>
         </Box>
       </Container>

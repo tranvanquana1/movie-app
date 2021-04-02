@@ -42,7 +42,6 @@ export default function MediaCard() {
           <Typography
             gutterBottom
             variant="h6"
-            component="h2"
             style={{ lineHeight: "90%", alignSelf: "center", margin: 0 }}
           >
             Lizard

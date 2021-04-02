@@ -12,8 +12,8 @@ const Footer = () => {
       }}
     >
       <Grid container>
-        <Grid container item xs="8" style={{ borderRight: "1px solid #ccc" }}>
-          <Grid item xs="12">
+        <Grid container item xs={8} style={{ borderRight: "1px solid #ccc" }}>
+          <Grid item xs={12}>
             <Typography
               variant="h5"
               style={{
@@ -26,29 +26,29 @@ const Footer = () => {
               Liên kết phim
             </Typography>
           </Grid>
-          <Grid container item xs="12">
-            <Grid item xs="6">
+          <Grid container item xs={12}>
+            <Grid item xs={6}>
               <Typography variant="subtitle1" style={{ margin: 10 }}>
                 <Link href="#" style={{ color: "#ccc" }}>
                   Liên kết phim
                 </Link>
               </Typography>
             </Grid>
-            <Grid item xs="6">
+            <Grid item xs={6}>
               <Typography variant="subtitle1" style={{ margin: 10 }}>
                 <Link href="#" style={{ color: "#ccc" }}>
                   Liên kết phim
                 </Link>
               </Typography>
             </Grid>
-            <Grid item xs="6">
+            <Grid item xs={6}>
               <Typography variant="subtitle1" style={{ margin: 10 }}>
                 <Link href="#" style={{ color: "#ccc" }}>
                   Liên kết phim
                 </Link>
               </Typography>
             </Grid>
-            <Grid item xs="6">
+            <Grid item xs={6}>
               <Typography variant="subtitle1" style={{ margin: 10 }}>
                 <Link href="#" style={{ color: "#ccc" }}>
                   Liên kết phim
@@ -57,8 +57,8 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container item xs="4">
-          <Grid item xs="12">
+        <Grid container item xs={4}>
+          <Grid item xs={12}>
             <Typography
               variant="h5"
               style={{
@@ -71,14 +71,14 @@ const Footer = () => {
               Liên hệ
             </Typography>
           </Grid>
-          <Grid item xs="12">
+          <Grid item xs={12}>
             <Typography variant="subtitle1" style={{ margin: 10 }}>
               <Link href="#" style={{ color: "#ccc" }}>
                 Chính sách
               </Link>
             </Typography>
           </Grid>
-          <Grid item xs="12">
+          <Grid item xs={12}>
             <Typography variant="subtitle1" style={{ margin: 10 }}>
               <Link href="#" style={{ color: "#ccc" }}>
                 Facebook

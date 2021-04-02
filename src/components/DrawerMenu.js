@@ -9,7 +9,7 @@ const DrawerMenu = () => {
         {arr.map((item) => (
           <Grid
             item
-            xs="6"
+            xs={6}
             style={{
               padding: 10,
               borderBottom: "1px solid #cccccc",
@@ -22,7 +22,7 @@ const DrawerMenu = () => {
         {arr.length % 2 !== 0 && (
           <Grid
             item
-            xs="6"
+            xs={6}
             style={{ padding: 10, borderBottom: "1px solid #cccccc" }}
           ></Grid>
         )}

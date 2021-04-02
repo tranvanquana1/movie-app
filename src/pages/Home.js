@@ -60,41 +60,41 @@ const Home = () => {
         <hr />
       </div>
       <div>
-        <Grid container spacing="2">
-          <Grid item xs="2">
+        <Grid container spacing={2}>
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
-          <Grid item xs="2">
+          <Grid item xs={2}>
             <Card />
           </Grid>
         </Grid>
