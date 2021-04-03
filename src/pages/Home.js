@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Grid, Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -6,6 +6,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Movie from "../components/Movie";
 import Card from "../components/Card";
 import PaginationRounded from "../components/PaginationRounded";
+import movieApi from "../api/movieApi";
+import predictApi from "../api/predictApi";
 
 const useStyles = makeStyles({
   root: {
@@ -16,6 +18,29 @@ const useStyles = makeStyles({
 
 const Home = () => {
   const classes = useStyles();
+
+  const [movieList, setMovieList] = useState([]);
+
+  const user_id = localStorage.getItem("username");
+
+  useEffect(() => {
+    const fetchPredictList = async () => {
+      try {
+        const params = { user_id: user_id };
+        const response = await predictApi.getAll(params);
+        console.log("Fetch movies successfully", response);
+
+        setMovieList(response.data);
+      } catch (error) {
+        console.log("Failed  to fetch movies: ", error);
+      }
+    };
+
+    fetchPredictList();
+  }, []);
+
+  console.log("movie list", movieList);
+
   return (
     <Container fixed className={classes.root}>
       <div>
@@ -61,42 +86,11 @@ const Home = () => {
       </div>
       <div>
         <Grid container spacing={2}>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
-          <Grid item xs={2}>
-            <Card />
-          </Grid>
+          {movieList.map((item) => (
+            <Grid item xs={3} key={item.index}>
+              <Card movie={item} />
+            </Grid>
+          ))}
         </Grid>
         <PaginationRounded />
       </div>
