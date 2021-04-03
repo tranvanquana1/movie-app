@@ -124,6 +124,7 @@ export default function FlexGrow() {
                   borderColor: "rgb(90 90 90)",
                 }}
                 onClick={() => handleLogout()}
+                href="/login"
               >
                 Đăng xuất
               </Button>

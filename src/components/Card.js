@@ -18,16 +18,6 @@ const useStyles = makeStyles({
 export default function ImgMediaCard(props) {
   const classes = useStyles();
 
-  const movie = {
-    movie_id: 1366,
-    movie_title: "JLG/JLG - autoportrait de décembre (1994)",
-    release_date: "01-Jan-1994",
-    IMDb_URL:
-      "http://us.imdb.com/M/title-exact?JLG/JLG%20-%20autoportrait%20de%20d%E9cembre%20%281994%29",
-    category: "Documentary Drama",
-    predict_rating: 5.355938328,
-  };
-
   return (
     <Card className={classes.root}>
       <CardActionArea>
