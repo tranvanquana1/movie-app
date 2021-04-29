@@ -30,28 +30,28 @@ const Footer = () => {
             <Grid item xs={6}>
               <Typography variant="subtitle1" style={{ margin: 10 }}>
                 <Link href="#" style={{ color: "#ccc" }}>
-                  Liên kết phim
+                  Naruto
                 </Link>
               </Typography>
             </Grid>
             <Grid item xs={6}>
               <Typography variant="subtitle1" style={{ margin: 10 }}>
                 <Link href="#" style={{ color: "#ccc" }}>
-                  Liên kết phim
+                  One Piece
                 </Link>
               </Typography>
             </Grid>
             <Grid item xs={6}>
               <Typography variant="subtitle1" style={{ margin: 10 }}>
                 <Link href="#" style={{ color: "#ccc" }}>
-                  Liên kết phim
+                  Dragon Ball
                 </Link>
               </Typography>
             </Grid>
             <Grid item xs={6}>
               <Typography variant="subtitle1" style={{ margin: 10 }}>
                 <Link href="#" style={{ color: "#ccc" }}>
-                  Liên kết phim
+                  Connan
                 </Link>
               </Typography>
             </Grid>

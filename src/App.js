@@ -11,11 +11,13 @@ import {
 //
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+
 import { useState } from "react";
+import Register from "./pages/Register";
 
 function App() {
+  const [user, setUser] = useState(localStorage.getItem("username"));
+
   return (
     <div className="App">
       <Router>
@@ -23,19 +25,19 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          {localStorage.getItem("username") !== null && (
-            <Route path="/">
-              <Header />
-              <Home />
-              <Footer />
-            </Route>
-          )}
-
-          {localStorage.getItem("username") === null && (
-            <Route>
-              <Redirect to={{ pathname: "/login" }} />
-            </Route>
-          )}
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route
+            path="/"
+            render={() => {
+              return localStorage.getItem("username") ? (
+                <Home />
+              ) : (
+                <Redirect to="/login" />
+              );
+            }}
+          ></Route>
         </Switch>
       </Router>
     </div>

@@ -1,26 +1,17 @@
 import React, { useState } from "react";
 import {
-  Redirect,
-  Route,
-  Link,
-  useHistory,
-  withRouter,
-} from "react-router-dom";
-import {
   Container,
   Grid,
   TextField,
   Button,
   Typography,
   FormControl,
-  FormGroup,
-  // Link,
 } from "@material-ui/core";
 
 import userApi from "../api/userApi";
-import { useEffect } from "react";
+import { useHistory } from "react-router";
 
-const Login = (props) => {
+const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,13 +25,11 @@ const Login = (props) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("submit");
-
+  const handleSubmit = async () => {
+    console.log("register");
     try {
       let params = { username: username, password: password };
-      const response = await userApi.login(params);
+      const response = await userApi.register(params);
       console.log("Fetch movies successfully", response);
 
       localStorage.setItem("username", response.data.username);
@@ -50,6 +39,7 @@ const Login = (props) => {
       console.log("Failed  to fetch movies: ", error);
     }
   };
+
   return (
     <Container fixed style={{ backgroundColor: "#ccc" }}>
       <Grid
@@ -71,8 +61,7 @@ const Login = (props) => {
           <Typography variant="h5" style={{ textAlign: "center" }}>
             Recommend App
           </Typography>
-          <form
-            // onSubmit={handleSubmit}
+          <FormControl
             style={{
               display: "flex",
               flexDirection: "column",
@@ -80,47 +69,40 @@ const Login = (props) => {
               margin: 20,
             }}
           >
-            <FormGroup>
-              <TextField
-                id="outlined-username-input"
-                label="Username"
-                type="username"
-                autoComplete="current-username"
-                variant="outlined"
-                value={username}
-                style={{ margin: 10 }}
-                onChange={(e) => handleUsername(e)}
-              />
-            </FormGroup>
-            <FormGroup>
-              <TextField
-                id="outlined-password-input"
-                label="Password"
-                type="password"
-                autoComplete="current-password"
-                variant="outlined"
-                value={password}
-                style={{ margin: 10 }}
-                onChange={(e) => handlePassword(e)}
-              />
-            </FormGroup>
+            <TextField
+              id="outlined-username-input"
+              label="Username"
+              type="username"
+              autoComplete="current-username"
+              variant="outlined"
+              value={username}
+              style={{ margin: 10 }}
+              onChange={(e) => handleUsername(e)}
+            />
+            <TextField
+              id="outlined-password-input"
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              variant="outlined"
+              value={password}
+              style={{ margin: 10 }}
+              onChange={(e) => handlePassword(e)}
+            />
             <Button
               variant="contained"
               color="primary"
+              type="submit"
               style={{ margin: 10 }}
               onClick={handleSubmit}
-              type="submit"
             >
-              Đăng Nhập
+              Đăng ký tài khoản
             </Button>
-            <Link style={{ margin: 10 }} to="/register">
-              Tạo tài khoản
-            </Link>
-          </form>
+          </FormControl>
         </Grid>
       </Grid>
     </Container>
   );
 };
 
-export default withRouter(Login);
+export default Register;

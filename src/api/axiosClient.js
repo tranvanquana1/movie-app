@@ -2,9 +2,10 @@ import axios from "axios";
 import queryString from "query-string";
 
 const axiosClient = axios.create({
-  baseURL: `https://api-recommend-v1.herokuapp.com`,
+  baseURL: `https://api-recommend-v2.herokuapp.com`,
   headers: {
     "content-type": "application/json",
+    "Content-Type": "application/x-www-form-urlencoded",
   },
 
   paramsSerializer: (params) => queryString.stringify(params),

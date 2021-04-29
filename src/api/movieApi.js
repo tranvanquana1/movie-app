@@ -2,7 +2,7 @@ import axiosClient from "./axiosClient";
 
 const MovieApi = {
   getAll: (params) => {
-    const url = "/movie/list";
+    const url = "/api/list-movies";
     return axiosClient.get(url, { params });
   },
 };

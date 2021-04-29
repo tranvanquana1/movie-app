@@ -7,6 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
 import movieImg from "../static/images/gunnersaurus.jpg";
+import Rating from "./Rating";
 
 const useStyles = makeStyles({
   root: {
@@ -50,26 +51,12 @@ export default function ImgMediaCard(props) {
               fontSize: 16,
             }}
           >
-            {props.movie.movie_title}
+            {props.movie.title}
             <Typography variant="subtitle1" style={{ color: "#ccc" }}>
               {props.movie.release_date}
             </Typography>
           </Typography>
-          <Typography
-            variant="h5"
-            style={{
-              backgroundColor: "#000000cc",
-              color: "#ce9241",
-              padding: "1px 10px",
-              alignSelf: "center",
-              boxShadow: "0 0 2px 2px #6b6b6b",
-              whiteSpace: "nowrap",
-              overflow: "hidden",
-              width: 38,
-            }}
-          >
-            {props.movie.predict_rating}
-          </Typography>
+          <Rating movieId={props.movie.movie_id} />
         </CardContent>
       </CardActionArea>
     </Card>

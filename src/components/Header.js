@@ -27,6 +27,7 @@ export default function FlexGrow() {
     console.log(localStorage.getItem("username"));
     setUser(null);
     localStorage.removeItem("username");
+    localStorage.removeItem("user_id");
   };
 
   return (

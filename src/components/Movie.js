@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
@@ -42,14 +42,21 @@ export default function MediaCard() {
           <Typography
             gutterBottom
             variant="h6"
-            style={{ lineHeight: "90%", alignSelf: "center", margin: 0 }}
+            style={{
+              lineHeight: "90%",
+              alignSelf: "center",
+              margin: 0,
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
           >
-            Lizard
+            {props.movie.title}
             <Typography variant="subtitle1" style={{ color: "#ccc" }}>
-              2020
+              {props.movie.release_date}
             </Typography>
           </Typography>
-          <Typography
+          {/* <Typography
             variant="h5"
             style={{
               backgroundColor: "#000000cc",
@@ -59,7 +66,7 @@ export default function MediaCard() {
             }}
           >
             9.7
-          </Typography>
+          </Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>

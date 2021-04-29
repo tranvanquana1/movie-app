@@ -2,7 +2,27 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 const DrawerMenu = () => {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  const arr = [
+    "unknown",
+    "Action",
+    "Adventure",
+    "Animation",
+    "Children's",
+    "Comedy",
+    "Crime",
+    "Documentary",
+    "Drama",
+    "Fantasy",
+    "Film-Noir",
+    "Horror",
+    "Musical",
+    "Mystery",
+    "Romance",
+    "Sci-Fi",
+    "Thriller",
+    "War",
+    "Western",
+  ];
   return (
     <div>
       <Grid container style={{}}>
@@ -16,7 +36,7 @@ const DrawerMenu = () => {
               cursor: "pointer",
             }}
           >
-            <Typography variant="p">Item {item}</Typography>
+            <Typography variant="p">{item}</Typography>
           </Grid>
         ))}
         {arr.length % 2 !== 0 && (
